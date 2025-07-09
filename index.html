@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>不会取名字口阿</title>
+    <style>
+      html {
+        background: linear-gradient(to right, #57B5DD, #69FF73);
+        color: #fff;
+      }
+      h1 {
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <h1 align="center">这只是一个普通的页面...</h1>
+    <hr>
+    <script>
+      var title;
+      
+      var kaomoji_array = ['(｡･ω･｡)ﾉ♡', '(｢･ω･)｢', '(´▽｀)ノ♪', '(눈_눈)', '(๑＞v＜)☆', 'Σ(っ °Д °;)っ'];
+
+      document.addEventListener('DOMContentLoaded', function() {
+      	title = document.querySelector('title');
+      
+      	const kaomoji = kaomoji_array[Math.floor(Math.random() * kaomoji_array.length)];
+      	title.innerText += (title.innerText ? ' ' : '') + kaomoji;
+      });
+    </script>
+  </body>
+</html>
