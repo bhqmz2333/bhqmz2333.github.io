@@ -12,10 +12,11 @@
         return ["to right", "to left", "to bottom", "to top"][Math.round(Math.random()*3)]
       }
       function update() {
-        document.querySelector("h1").style.top = Math.random()*document.body.clientHeight;
-        document.querySelector("h1").style.left = Math.random()*document.body.clientWidth;
-        document.querySelector("h1").style.fontSize = `${Math.random()*22+10}pt`;
-        document.querySelector("h1").style.color = randomColor();
+		let h1 = document.querySelector("h1");
+        h1.style.top = Math.random()*(document.body.clientHeight-56);
+        h1.style.left = Math.random()*(document.body.clientWidth-56);
+        h1.style.fontSize = `${Math.random()*22+10}pt`;
+        h1.style.color = randomColor();
         document.body.style.background = `linear-gradient(${randomDirection()},${randomColor()},${randomColor()})`;
       }
       update();
