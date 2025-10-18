@@ -3,7 +3,7 @@
     <meta charset="UTF-8"/>
   </head>
   <body style="margin:0">
-    <h1 onclick="x=prompt('恭喜你点到了！获得一次修改文字的机会...', this.innerText);if (x!=null&&x.trim()!='') this.innerText=x;">这只是一个普通的页面...</h1>
+    <h1 onclick="x=prompt('恭喜你点到了！获得一次修改文字的机会...', this.innerText);if (x!=null&&x.trim()!='') this.innerText=x;">人机</h1>
     <script>
       function randomColor() {
         return `rgb(${Math.random()*255},${Math.random()*255},${Math.random()*255})`;
@@ -12,8 +12,8 @@
         return ["to right", "to left", "to bottom", "to top"][Math.round(Math.random()*3)]
       }
       function update() {
-        document.querySelector("h1").style.top = Math.random()*600;
-        document.querySelector("h1").style.left = Math.random()*600;
+        document.querySelector("h1").style.top = Math.random()*document.body.clientHeight;
+        document.querySelector("h1").style.left = Math.random()*document.body.clientWidth;
         document.querySelector("h1").style.fontSize = `${Math.random()*22+10}pt`;
         document.querySelector("h1").style.color = randomColor();
         document.body.style.background = `linear-gradient(${randomDirection()},${randomColor()},${randomColor()})`;
