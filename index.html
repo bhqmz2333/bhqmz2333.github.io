@@ -1,31 +1,41 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <title>不会取名字口阿</title>
-    <style>
-      html {
-        background: linear-gradient(to right, #57B5DD, #69FF73);
-        color: #fff;
-      }
-      h1 {
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-      }
-    </style>
+    <meta charset="UTF-8"/>
   </head>
-  <body>
-    <h1 align="center">这只是一个普通的页面...</h1>
+  <body style="margin:0">
+    <h1 onclick="x=prompt('恭喜你点到了！获得一次修改文字的机会...', this.innerText);if (x!=null&&x.trim()!='') this.innerText=x;">这只是一个普通的页面...</h1>
     <script>
-      var title;
-      
-      var kaomoji_array = ['(｡･ω･｡)ﾉ♡', '(｢･ω･)｢', '(´▽｀)ノ♪', '(눈_눈)', '(๑＞v＜)☆', 'Σ(っ °Д °;)っ'];
-
-      document.addEventListener('DOMContentLoaded', function() {
-      	title = document.querySelector('title');
-      
-      	const kaomoji = kaomoji_array[Math.floor(Math.random() * kaomoji_array.length)];
-      	title.innerText += (title.innerText ? ' ' : '') + kaomoji;
-      });
+      function randomColor() {
+        return `rgb(${Math.random()*255},${Math.random()*255},${Math.random()*255})`;
+      }
+      function randomDirection() {
+        return ["to right", "to left", "to bottom", "to top"][Math.round(Math.random()*3)]
+      }
+      function update() {
+        document.querySelector("h1").style.top = Math.random()*600;
+        document.querySelector("h1").style.left = Math.random()*600;
+        document.querySelector("h1").style.fontSize = `${Math.random()*22+10}pt`;
+        document.querySelector("h1").style.color = randomColor();
+        document.body.style.background = `linear-gradient(${randomDirection()},${randomColor()},${randomColor()})`;
+      }
+      update();
+      setInterval(update, 500);
     </script>
+    <style>
+		body {
+		  /*background: linear-gradient(to right, #798741, #126483);*/
+		  background: linear-gradient(to right, #57B5DD, #69FF73);
+		  width: 100vw;
+		  height: 100vh;
+		  transition: .3s all ease;
+		}
+		h1 {
+		  position: absolute;
+		  text-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
+		  transition: .3s all ease;
+		  cursor: pointer;
+		  user-select: none;
+		}
+    </style>
   </body>
 </html>
